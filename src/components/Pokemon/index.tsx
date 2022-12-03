@@ -1,27 +1,23 @@
+// import Card from 'components/Card'
 import Card from 'components/Card'
 import { PokedexIndexData } from 'definitions'
-// import { FixedSizeList } from 'react-window'
-// import InfiniteLoader from 'react-window-infinite-loader'
+import VirtualScroll from './VirtualSroll'
+import styles from './index.module.css'
 
 interface PokemonContainerProps {
   data: PokedexIndexData[]
-  refetch: () => void
+  loadMoreItems: () => void
   hasNextPage: boolean
   isNextPageLoading: boolean
 }
 
-const Pokemon: React.FC<PokemonContainerProps> = ({ data, refetch }) => {
+const Pokemon: React.FC<PokemonContainerProps> = ({ data, ...props }) => {
   return (
-    // <InfiniteLoader isItemLoaded={} itemCount={data.length} loadMoreItems={refetch}>
-    //   {({ onItemsRendered, ref }) => (
-    //     <FixedSizeList itemCount={data.length} onItemsRendered={} ref={ref}>
-    //       {}
-    //     </FixedSizeList>
-    //   )}
-    // </InfiniteLoader>
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)' }}>
-      {data.map((item, index) => (
-        <Card pokemonUrl={item.url} key={index} />
+    <div className={styles.container}>
+      {data.map((item) => (
+        <VirtualScroll>
+          <Card pokemonUrl={item.url} key={item.name} />
+        </VirtualScroll>
       ))}
     </div>
   )

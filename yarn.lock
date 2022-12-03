@@ -2045,21 +2045,6 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-window-infinite-loader@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@types/react-window-infinite-loader/-/react-window-infinite-loader-1.0.6.tgz#d7b23b4afaa1e0e2050876b766c3ea19f748f549"
-  integrity sha512-V8g8sBDLVeJJAfEENJS7VXZK+DRJ+jzPNtk8jpj2G+obhf+iqGNUDGwNWCbBhLiD+KpHhf3kWQlKBRi0tAeU4Q==
-  dependencies:
-    "@types/react" "*"
-    "@types/react-window" "*"
-
-"@types/react-window@*":
-  version "1.8.5"
-  resolved "https://registry.yarnpkg.com/@types/react-window/-/react-window-1.8.5.tgz#285fcc5cea703eef78d90f499e1457e9b5c02fc1"
-  integrity sha512-V9q3CvhC9Jk9bWBOysPGaWy/Z0lxYcTXLtLipkt2cnRj1JOSFNF7wqGpkScSXMgBwC+fnVRg/7shwgddBG5ICw==
-  dependencies:
-    "@types/react" "*"
-
 "@types/react@*", "@types/react@^18.0.0":
   version "18.0.25"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.25.tgz#8b1dcd7e56fe7315535a4af25435e0bb55c8ae44"
@@ -7456,6 +7441,11 @@ react-error-overlay@^6.0.11:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.11.tgz#92835de5841c5cf08ba00ddd2d677b6d17ff9adb"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
+react-intersection-observer@^9.4.1:
+  version "9.4.1"
+  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-9.4.1.tgz#4ccb21e16acd0b9cf5b28d275af7055bef878f6b"
+  integrity sha512-IXpIsPe6BleFOEHKzKh5UjwRUaz/JYS0lT/HPsupWEQou2hDqjhLMStc5zyE3eQVT4Fk3FufM8Fw33qW1uyeiw==
+
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -7545,11 +7535,6 @@ react-scripts@5.0.1:
     workbox-webpack-plugin "^6.4.1"
   optionalDependencies:
     fsevents "^2.3.2"
-
-react-window-infinite-loader@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/react-window-infinite-loader/-/react-window-infinite-loader-1.0.8.tgz#f88b1444829e732a3f4c5ae861644815329ddd88"
-  integrity sha512-907ZLAiZZfBHuZyiY0V7uiSL4P/rI6UQyCF9wES1cDWTeyNLgGLaxu+BZkcUW3R5tSCQcbCcWBl0jVIpYzrKGQ==
 
 react-window@^1.8.8:
   version "1.8.8"

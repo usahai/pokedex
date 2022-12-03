@@ -5,8 +5,9 @@ interface CardProps {
   pokemonUrl: string
 }
 
-const Card = ({ pokemonUrl }: CardProps) => {
+const Card: React.FC<CardProps> = ({ pokemonUrl }) => {
   const { data } = usePokemonData(pokemonUrl)
+
   return (
     <div className={styles.container}>
       <p>

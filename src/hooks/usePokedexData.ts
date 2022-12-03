@@ -23,7 +23,6 @@ const usePokedexData = (): UsePokedexDataProps => {
         next || 'https://pokeapi.co/api/v2/pokemon',
       )
 
-      console.log('resp:', resp)
       const updatedPokemon = [...pokedex, ...resp.results]
       setPokedex(updatedPokemon)
       setTotalCount(resp.count)
