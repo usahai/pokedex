@@ -3,8 +3,12 @@ import usePokedexData from 'hooks/usePokedexData'
 import styles from './index.module.css'
 
 const Home = () => {
-  const { pokedex, refetch, hasNextPage, isNextPageLoading, ...rest } =
-    usePokedexData()
+  const {
+    pokedex,
+    refetch: loadMoreItems,
+    hasNextPage,
+    isNextPageLoading,
+  } = usePokedexData()
 
   return (
     <div>
@@ -12,7 +16,7 @@ const Home = () => {
       <div className={styles.container}>
         <Pokemon
           data={pokedex}
-          refetch={refetch}
+          loadMoreItems={loadMoreItems}
           hasNextPage={hasNextPage}
           isNextPageLoading={isNextPageLoading}
         />
