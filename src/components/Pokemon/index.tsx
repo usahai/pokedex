@@ -1,8 +1,8 @@
 import Card from 'components/Card'
 import { PokedexItemData } from 'definitions'
-import VirtualScroll from './VirtualScroll'
 import styles from './index.module.css'
 import InfiniteScroll from 'react-infinite-scroller'
+import VirtualScroll from 'containers/VirtualScroll'
 
 interface PokemonContainerProps {
   data: PokedexItemData[]
