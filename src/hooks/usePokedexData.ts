@@ -1,17 +1,17 @@
 import { useCallback, useEffect, useState } from 'react'
-import { PokedexData, PokedexIndexData } from 'definitions'
+import { PokedexData, PokedexItemData } from 'definitions'
 import { fetchPokedexData } from 'services/api'
 
 interface UsePokedexDataProps {
   refetch: () => void
-  pokedex: PokedexIndexData[]
+  pokedex: PokedexItemData[]
   totalCount: number
   hasNextPage: boolean
   isNextPageLoading: boolean
 }
 
 const usePokedexData = (): UsePokedexDataProps => {
-  const [pokedex, setPokedex] = useState<PokedexIndexData[]>([])
+  const [pokedex, setPokedex] = useState<PokedexItemData[]>([])
   const [totalCount, setTotalCount] = useState<number>(0)
   const [next, setNext] = useState<string>('')
   const [isLoading, setIsLoading] = useState<boolean>(false)

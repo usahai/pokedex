@@ -15,9 +15,9 @@ const Home = () => {
       <h1>Pokemon</h1>
       <div className={styles.container}>
         <Pokemon
-          hasNextPage={hasNextPage}
           data={pokedex}
           loadMoreItems={loadMoreItems}
+          hasNextPage={hasNextPage}
           isNextPageLoading={isNextPageLoading}
         />
       </div>

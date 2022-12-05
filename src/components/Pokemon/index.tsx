@@ -1,25 +1,35 @@
-// import Card from 'components/Card'
 import Card from 'components/Card'
-import { PokedexIndexData } from 'definitions'
-import VirtualScroll from './VirtualSroll'
+import { PokedexItemData } from 'definitions'
+import VirtualScroll from './VirtualScroll'
 import styles from './index.module.css'
+import InfiniteScroll from 'react-infinite-scroller'
 
 interface PokemonContainerProps {
-  data: PokedexIndexData[]
+  data: PokedexItemData[]
   loadMoreItems: () => void
   hasNextPage: boolean
   isNextPageLoading: boolean
 }
 
-const Pokemon: React.FC<PokemonContainerProps> = ({ data, ...props }) => {
+const Pokemon: React.FC<PokemonContainerProps> = ({
+  data,
+  loadMoreItems,
+  hasNextPage,
+  ...props
+}) => {
   return (
-    <div className={styles.container}>
+    <InfiniteScroll
+      pageStart={0}
+      loadMore={loadMoreItems}
+      hasMore={hasNextPage}
+      className={styles.container}
+    >
       {data.map((item) => (
-        <VirtualScroll>
+        <VirtualScroll height={38} key={item.name}>
           <Card pokemonUrl={item.url} key={item.name} />
         </VirtualScroll>
       ))}
-    </div>
+    </InfiniteScroll>
   )
 }
 

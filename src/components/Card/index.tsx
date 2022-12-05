@@ -10,13 +10,11 @@ const Card: React.FC<CardProps> = ({ pokemonUrl }) => {
 
   return (
     <div className={styles.container}>
-      <p>
-        <img
-          src={data?.sprites?.other?.['official-artwork']?.front_default}
-          alt={data?.name}
-        />
-        <h1>{data?.name}</h1>
-      </p>
+      <img
+        src={data?.sprites?.other?.['official-artwork']?.front_default}
+        alt={data?.name}
+      />
+      <h1>{data?.name}</h1>
     </div>
   )
 }
