@@ -9,3 +9,10 @@ export interface PokedexData {
   previous: string
   results: PokedexItemData[]
 }
+
+export interface PokedexInfiniteQueryResponse {
+  response: PokedexItemData[]
+  nextPage: string
+}
+
+export type PokedexQueryResponse = PokedexInfiniteQueryResponse[] | undefined

@@ -1,14 +1,20 @@
 import Pokemon from 'components/Pokemon'
-import usePokedexData from 'hooks/usePokedexData'
+import { Nullable, PokedexItemData } from 'definitions'
+import usePokedexDatav2 from 'hooks/usePokedexDatav2'
+import { useMemo } from 'react'
 import styles from './index.module.css'
 
 const Home = () => {
   const {
-    pokedex,
-    refetch: loadMoreItems,
+    data,
+    fetchNextPage: loadMoreItems,
     hasNextPage,
-    isNextPageLoading,
-  } = usePokedexData()
+    isFetchingNextPage: isNextPageLoading,
+  } = usePokedexDatav2()
+
+  const pokedex: Nullable<PokedexItemData[]> = useMemo(() => {
+    return data?.pages?.map((item) => item?.response).flat()
+  }, [data])
 
   return (
     <div>
