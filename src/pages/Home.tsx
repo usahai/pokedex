@@ -12,8 +12,6 @@ const Home = () => {
     isFetchingNextPage: isNextPageLoading,
   } = usePokedexDatav2()
 
-  console.log('[H] data:', data)
-
   const pokedex: Nullable<PokedexItemData[]> = useMemo(() => {
     return data?.pages?.map((item) => item?.response).flat()
   }, [data])

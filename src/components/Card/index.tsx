@@ -1,4 +1,3 @@
-// import usePokemonData from 'hooks/usePokemonData'
 import usePokemonDatav2 from 'hooks/usePokemonDatav2'
 import styles from './index.module.css'
 
@@ -7,7 +6,6 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ pokemonUrl }) => {
-  // const { data } = usePokemonData(pokemonUrl)
   const { data } = usePokemonDatav2({ url: pokemonUrl })
 
   return (
