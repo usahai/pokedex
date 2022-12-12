@@ -1,6 +1,5 @@
 import Card from 'components/Card'
 import { Nullable, PokedexItemData } from 'definitions'
-import styles from './index.module.css'
 import InfiniteScroll from 'react-infinite-scroller'
 import VirtualScroll from 'containers/VirtualScroll'
 
@@ -22,7 +21,7 @@ const Pokemon: React.FC<PokemonContainerProps> = ({
       pageStart={0}
       loadMore={loadMoreItems}
       hasMore={hasNextPage}
-      className={styles.container}
+      className="grid grid-cols-3"
     >
       {data?.map((item) => (
         <VirtualScroll height={38} key={item.name}>
