@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { Nullable } from 'definitions'
 import { ReactComponent as Dark } from 'assets/dark.svg'
 import { ReactComponent as Light } from 'assets/light.svg'
+import Button from 'containers/Button'
 
 interface ThemeToggleButtonProps {}
 type ThemeProps = Nullable<'light' | 'dark'>
@@ -47,12 +48,9 @@ const ThemeToggleButton: React.FC<ThemeToggleButtonProps> = () => {
   }
 
   return (
-    <button
-      className="border-2 border-black p-2 rounded-lg ease-in duration-75 hover:bg-gray-700 dark:border-white  dark:hover:bg-gray-100"
-      onClick={toggleMode}
-    >
+    <Button onClick={toggleMode}>
       {theme === 'light' ? <Light /> : <Dark className="dark:color-white" />}
-    </button>
+    </Button>
   )
 }
 

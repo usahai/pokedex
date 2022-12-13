@@ -21,10 +21,10 @@ const Pokemon: React.FC<PokemonContainerProps> = ({
       pageStart={0}
       loadMore={loadMoreItems}
       hasMore={hasNextPage}
-      className="grid grid-cols-3"
+      className="grid grid-cols-3 gap-6"
     >
       {data?.map((item) => (
-        <VirtualScroll height={38} key={item.name}>
+        <VirtualScroll key={item.name}>
           <Card pokemonUrl={item.url} key={item.name} />
         </VirtualScroll>
       ))}
