@@ -1,5 +1,6 @@
 import usePokemonDatav2 from 'hooks/usePokemonDatav2'
-import styles from './index.module.css'
+import clsx from 'clsx'
+import { capitalizeFirstLetter } from 'utils/string'
 
 interface CardProps {
   pokemonUrl: string
@@ -7,14 +8,24 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ pokemonUrl }) => {
   const { data } = usePokemonDatav2({ url: pokemonUrl })
+  const name = data?.name || ''
 
   return (
-    <div className={styles.container}>
+    <div
+      className={clsx(
+        'flex flex-col p-8 items-center rounded-2xl shadow-lg',
+        'bg-gray-50 dark:bg-slate-400',
+      )}
+    >
       <img
         src={data?.sprites?.other?.['official-artwork']?.front_default}
         alt={data?.name}
       />
-      <h1>{data?.name}</h1>
+      <div className="flex justify-start items-center w-full h-16 -mb-8">
+        <h1 className="font-bold dark:text-gray-100">
+          {capitalizeFirstLetter(name)}
+        </h1>
+      </div>
     </div>
   )
 }

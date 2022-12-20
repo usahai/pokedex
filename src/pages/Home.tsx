@@ -2,7 +2,6 @@ import Pokemon from 'components/Pokemon'
 import { Nullable, PokedexItemData } from 'definitions'
 import usePokedexDatav2 from 'hooks/usePokedexDatav2'
 import { useMemo } from 'react'
-import styles from './index.module.css'
 
 const Home = () => {
   const {
@@ -18,8 +17,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Pokemon</h1>
-      <div className={styles.container}>
+      <div className="block">
         <Pokemon
           data={pokedex}
           loadMoreItems={loadMoreItems}
