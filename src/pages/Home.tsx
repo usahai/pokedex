@@ -1,31 +1,28 @@
-import Pokemon from 'components/Pokemon'
-import { Nullable, PokedexItemData } from 'definitions'
-import usePokedexDatav2 from 'hooks/usePokedexDatav2'
 import { useMemo } from 'react'
+import Pokemon from 'components/Pokemon'
+import AppContainer from 'containers/AppContainer'
+import { Nullable, PokedexItemData } from 'definitions'
+import usePokedexDatav3 from 'hooks/usePokedexDatav3'
 
 const Home = () => {
-  const {
-    data,
-    fetchNextPage: loadMoreItems,
-    hasNextPage,
-    isFetchingNextPage: isNextPageLoading,
-  } = usePokedexDatav2()
+  const { data, hasNextPage, fetchNextPage, isFetchingNextPage } =
+    usePokedexDatav3()
 
   const pokedex: Nullable<PokedexItemData[]> = useMemo(() => {
     return data?.pages?.map((item) => item?.response).flat()
   }, [data])
 
   return (
-    <div>
+    <AppContainer>
       <div className="block">
         <Pokemon
           data={pokedex}
-          loadMoreItems={loadMoreItems}
+          fetchNextPage={fetchNextPage}
           hasNextPage={hasNextPage}
-          isNextPageLoading={isNextPageLoading}
+          isFetchingNextPage={isFetchingNextPage}
         />
       </div>
-    </div>
+    </AppContainer>
   )
 }
 
