@@ -8,11 +8,9 @@ function App() {
     <>
       <Header />
       <div className="bg-[#e6ecf8] dark:bg-gray-500">
-        <div className="max-xl:max-w-7xl flex justify-center pt-8">
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
       </div>
     </>
   )
