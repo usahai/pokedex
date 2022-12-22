@@ -6,7 +6,7 @@ const usePokedexDatav3 = () => {
     ['pokedex'],
     ({ pageParam }) => fetchPokedexDatav3(pageParam, 20),
     {
-      getNextPageParam: (_lastGroup, groups) => groups.length * 20,
+      getNextPageParam: (lastPage, groups) => groups.length * 20,
     },
   )
 }

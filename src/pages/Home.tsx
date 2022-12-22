@@ -1,16 +1,12 @@
+import { useMemo } from 'react'
 import Pokemon from 'components/Pokemon'
 import AppContainer from 'containers/AppContainer'
 import { Nullable, PokedexItemData } from 'definitions'
 import usePokedexDatav3 from 'hooks/usePokedexDatav3'
-import { useMemo } from 'react'
 
 const Home = () => {
-  const {
-    data,
-    hasNextPage,
-    fetchNextPage,
-    isFetchingNextPage: isNextPageLoading,
-  } = usePokedexDatav3()
+  const { data, hasNextPage, fetchNextPage, isFetchingNextPage } =
+    usePokedexDatav3()
 
   const pokedex: Nullable<PokedexItemData[]> = useMemo(() => {
     return data?.pages?.map((item) => item?.response).flat()
@@ -23,7 +19,7 @@ const Home = () => {
           data={pokedex}
           fetchNextPage={fetchNextPage}
           hasNextPage={hasNextPage}
-          isNextPageLoading={isNextPageLoading}
+          isFetchingNextPage={isFetchingNextPage}
         />
       </div>
     </AppContainer>

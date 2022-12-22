@@ -7,7 +7,7 @@ interface PokemonContainerProps {
   data: Nullable<PokedexItemData[]>
   fetchNextPage: () => void
   hasNextPage: boolean | undefined
-  isNextPageLoading: boolean
+  isFetchingNextPage: boolean
 }
 
 const Pokemon: React.FC<PokemonContainerProps> = ({
@@ -24,7 +24,9 @@ const Pokemon: React.FC<PokemonContainerProps> = ({
       className="grid grid-cols-3 gap-6"
     >
       {data?.map((item) => (
-        <Card pokemonUrl={item.url} key={item.name} />
+        <VirtualScroll key={item.name} height={37}>
+          <Card pokemonUrl={item.url} key={item.name} />
+        </VirtualScroll>
       ))}
     </InfiniteScroll>
   )
