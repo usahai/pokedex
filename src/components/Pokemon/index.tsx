@@ -8,12 +8,15 @@ interface PokemonContainerProps {
   fetchNextPage: () => void
   hasNextPage: boolean | undefined
   isFetchingNextPage: boolean
+  isLoadingPokedex: boolean
 }
 
 const Pokemon: React.FC<PokemonContainerProps> = ({
   data,
   fetchNextPage,
   hasNextPage,
+  isFetchingNextPage,
+  isLoadingPokedex,
   ...props
 }) => {
   return (
@@ -25,7 +28,12 @@ const Pokemon: React.FC<PokemonContainerProps> = ({
     >
       {data?.map((item) => (
         <VirtualScroll key={item.name} height={37}>
-          <Card pokemonUrl={item.url} key={item.name} />
+          <Card
+            pokemonUrl={item.url}
+            key={item.name}
+            isFetchingNextPage={isFetchingNextPage}
+            isLoadingPokedex={isLoadingPokedex}
+          />
         </VirtualScroll>
       ))}
     </InfiniteScroll>
