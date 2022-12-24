@@ -20,6 +20,7 @@ const Card: React.FC<CardProps> = ({
     url: pokemonUrl,
   })
   const name = data?.name || ''
+
   return (
     <div
       id="content-container"
@@ -29,7 +30,10 @@ const Card: React.FC<CardProps> = ({
         'h-[24rem]',
       )}
     >
-      <div id="content-image" className="h-80 w-80">
+      <div
+        id="content-image"
+        className="flex justify-center items-center h-80 w-80"
+      >
         {isLoadingPokemon ? (
           <div className={clsx('p-8', 'flex justify-center items-center')}>
             <Pokeball />
@@ -54,7 +58,7 @@ const Card: React.FC<CardProps> = ({
         >
           <h1 className="font-bold dark:text-gray-100">
             {isLoadingPokedex || isFetchingNextPage ? (
-              <Skeleton width={316} height={40} />
+              <Skeleton width={180} height={40} />
             ) : (
               capitalizeFirstLetter(name)
             )}
