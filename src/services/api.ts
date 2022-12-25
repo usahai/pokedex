@@ -53,13 +53,13 @@ export const fetchPokedexDatav3 = (
     }
   })
 
-export const fetchPokemonData = async (url: string) =>
+export const fetchPokemonData = async (url: string): Promise<PokemonData> =>
   new Promise<PokemonData>(async (resolve, reject) => {
     try {
       const resp = await fetch(url)
       const data: PokemonData = await resp.json()
 
-      resolve(data)
+      resolve(data ?? {})
     } catch (error) {
       console.error(error)
       reject(error)

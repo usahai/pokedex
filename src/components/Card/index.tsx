@@ -4,6 +4,7 @@ import { capitalizeFirstLetter } from 'utils/string'
 import { Pokeball } from 'containers/Pokeball'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import { useNavigate } from 'react-router'
 
 interface CardProps {
   pokemonUrl: string
@@ -19,6 +20,11 @@ const Card: React.FC<CardProps> = ({
   const { data, isLoading: isLoadingPokemon } = usePokemonDatav2({
     url: pokemonUrl,
   })
+  const navigate = useNavigate()
+
+  const handleSelect = () => {
+    navigate(`/${data?.name}`)
+  }
   const name = data?.name || ''
 
   return (
@@ -27,8 +33,9 @@ const Card: React.FC<CardProps> = ({
       className={clsx(
         'flex flex-col items-center rounded-2xl shadow-lg',
         'bg-gray-50 dark:bg-slate-400',
-        'h-[24rem]',
+        'h-[24rem] cursor-pointer',
       )}
+      onClick={handleSelect}
     >
       <div
         id="content-image"
