@@ -20,30 +20,36 @@ const Card: React.FC<CardProps> = ({
     url: pokemonUrl,
   })
   const name = data?.name || ''
+
   return (
     <div
+      id="content-container"
       className={clsx(
-        'flex flex-col p-8 items-center rounded-2xl shadow-lg',
+        'flex flex-col items-center rounded-2xl shadow-lg',
         'bg-gray-50 dark:bg-slate-400',
-        'w-[33.75rem] h-[36rem]',
+        'h-[24rem]',
       )}
     >
-      {isLoadingPokemon ? (
-        <div
-          className={clsx(
-            'h-[30rem] w-[29.6875rem]',
-            'flex justify-center items-center',
-          )}
-        >
-          <Pokeball />
-        </div>
-      ) : (
-        <img
-          src={data?.sprites?.other?.['official-artwork']?.front_default}
-          alt={data?.name}
-        />
-      )}
-      <div className="flex justify-start items-center w-full h-16 -mb-8">
+      <div
+        id="content-image"
+        className="flex justify-center items-center h-80 w-80"
+      >
+        {isLoadingPokemon ? (
+          <div className={clsx('p-8', 'flex justify-center items-center')}>
+            <Pokeball />
+          </div>
+        ) : (
+          <img
+            id="content-image"
+            src={data?.sprites?.other?.['official-artwork']?.front_default}
+            alt={data?.name}
+          />
+        )}
+      </div>
+      <div
+        id="content-area"
+        className="p-8 flex justify-start items-center w-full h-16 -mb-8"
+      >
         <SkeletonTheme
           baseColor="#ebebeb"
           highlightColor="#c8c8c8a8"
@@ -52,7 +58,7 @@ const Card: React.FC<CardProps> = ({
         >
           <h1 className="font-bold dark:text-gray-100">
             {isLoadingPokedex || isFetchingNextPage ? (
-              <Skeleton width={316} height={40} />
+              <Skeleton width={180} height={40} />
             ) : (
               capitalizeFirstLetter(name)
             )}

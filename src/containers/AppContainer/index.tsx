@@ -1,12 +1,24 @@
 import React from 'react'
+import clsx from 'clsx'
 
 interface AppContainerProps {
   children: React.ReactNode
+  className?: string
   ref?: React.MutableRefObject<any>
 }
 
-const AppContainer: React.FC<AppContainerProps> = ({ children, ref }) => (
-  <div className="max-xl:max-w-7xl flex justify-center pt-8" ref={ref}>
+const AppContainer: React.FC<AppContainerProps> = ({
+  children,
+  className,
+  ref,
+}) => (
+  <div
+    className={clsx(
+      'max-w-screen-2xl mx-auto p-8 min-h-[calc(100vh-5rem)]',
+      className,
+    )}
+    ref={ref}
+  >
     {children}
   </div>
 )

@@ -19,15 +19,13 @@ const Home = () => {
 
   return (
     <AppContainer>
-      <div className="block">
-        <Pokemon
-          data={pokedex}
-          fetchNextPage={fetchNextPage}
-          hasNextPage={hasNextPage}
-          isFetchingNextPage={isFetchingNextPage}
-          isLoadingPokedex={isLoadingPokedex}
-        />
-      </div>
+      <Pokemon
+        data={pokedex}
+        fetchNextPage={fetchNextPage}
+        hasNextPage={hasNextPage}
+        isFetchingNextPage={isFetchingNextPage}
+        isLoadingPokedex={isLoadingPokedex}
+      />
     </AppContainer>
   )
 }
