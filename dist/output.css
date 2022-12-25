@@ -700,6 +700,10 @@ h3 {
   justify-content: flex-start;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -862,6 +866,10 @@ h3 {
 
 .text-left {
   text-align: left;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .font-bold {
