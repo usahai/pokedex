@@ -24,4 +24,3 @@ const PokemonType: React.FC<PokemonTypeProps> = ({ type }) => {
 }
 
 export default PokemonType
-

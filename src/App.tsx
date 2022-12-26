@@ -5,13 +5,16 @@ import Footer from 'containers/Footer'
 
 function App() {
   return (
-    <>
+    <div id="box" className="flex flex-col h-full">
       <Header />
-      <div className="bg-[#e6ecf8] dark:bg-gray-500">
+      <div
+        id="body-container"
+        className="bg-[#e6ecf8] dark:bg-gray-500 flex-auto"
+      >
         <AppRoutes />
       </div>
       <Footer />
-    </>
+    </div>
   )
 }
 

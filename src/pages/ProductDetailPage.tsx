@@ -104,7 +104,7 @@ const ProductDetailPage = () => {
                 </span>
               </div>
               <div id="moves-list" className="max-h-[70vh] overflow-y-scroll">
-                <ul>
+                <ul className="grid grid-cols-2">
                   {getMoves(data, filters)?.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
