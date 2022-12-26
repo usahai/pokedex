@@ -1,21 +1,12 @@
 import clsx from 'clsx'
 import Spinner from 'components/Spinner'
+import { ButtonProps, ButtonRef } from 'definitions/button'
 import React from 'react'
 
-type Ref = HTMLButtonElement
-type ButtonType = 'submit' | 'button'
-interface ButtonProps {
-  className?: string
-  children: React.ReactNode
-  onClick: React.MouseEventHandler<HTMLButtonElement> | undefined
-  type?: ButtonType
-  isLoading?: boolean
-  startAdornment?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
-}
-
-const Button = React.forwardRef<Ref, ButtonProps>(
+const Button = React.forwardRef<ButtonRef, ButtonProps>(
   (
     {
+      id,
       className,
       children,
       type = 'button',
@@ -26,6 +17,7 @@ const Button = React.forwardRef<Ref, ButtonProps>(
     ref,
   ) => (
     <button
+      id={id}
       ref={ref}
       type={type}
       onClick={onClick}

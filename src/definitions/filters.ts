@@ -1,5 +1,4 @@
 export enum Learned {
-  'movesAll' = 'moves-all',
   'selfLearn' = 'self-learn',
   'machine' = 'machine',
 }
