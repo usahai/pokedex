@@ -1,0 +1,40 @@
+export const POKEMON_TYPE = {
+  BUG: 'BUG',
+  DARK: 'DARK',
+  DRAGON: 'DRAGON',
+  ELECTRIC: 'ELECTRIC',
+  FAIRY: 'FAIRY',
+  FIGHTING: 'FIGHTING',
+  FIRE: 'FIRE',
+  FLYING: 'FLYING',
+  GHOST: 'GHOST',
+  GRASS: 'GRASS',
+  GROUND: 'GROUND',
+  ICE: 'ICE',
+  NORMAL: 'NORMAL',
+  POISON: 'POISON',
+  PSYCHIC: 'PSYCHIC',
+  ROCK: 'ROCK',
+  STEEL: 'STEEL',
+  WATER: 'WATER',
+}
+
+export type POKEMON_TYPE_TYPE =
+  | 'BUG'
+  | 'DARK'
+  | 'DRAGON'
+  | 'ELECTRIC'
+  | 'FAIRY'
+  | 'FIGHTING'
+  | 'FIRE'
+  | 'FLYING'
+  | 'GHOST'
+  | 'GRASS'
+  | 'GROUND'
+  | 'ICE'
+  | 'NORMAL'
+  | 'POISON'
+  | 'PSYCHIC'
+  | 'ROCK'
+  | 'STEEL'
+  | 'WATER'

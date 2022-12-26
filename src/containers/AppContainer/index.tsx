@@ -13,8 +13,9 @@ const AppContainer: React.FC<AppContainerProps> = ({
   ref,
 }) => (
   <div
+    id="app-container"
     className={clsx(
-      'max-w-screen-2xl mx-auto p-8 min-h-[calc(100vh-5rem)]',
+      'flex max-w-screen-2xl mx-auto p-8 min-h-[calc(100vh-5rem)]',
       className,
     )}
     ref={ref}
