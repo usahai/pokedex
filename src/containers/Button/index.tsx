@@ -23,7 +23,7 @@ const Button = React.forwardRef<ButtonRef, ButtonProps>(
       onClick={onClick}
       className={clsx(
         'border-2 p-2 rounded-lg ease-in duration-75',
-        'border-black, hover:bg-gray-700 hover:text-gray-100',
+        'border-black hover:bg-gray-700 hover:text-gray-100 text-gray-700',
         'dark:border-white  dark:hover:bg-gray-100 dark:text-gray-100 dark:hover:text-gray-700',
         className,
       )}
